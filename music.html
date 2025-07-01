@@ -1,0 +1,43 @@
+<link rel="stylesheet" href="music.css">
+<div class="music-player">
+  <h2>MUSIC</h2>
+  <img src="Anh Kiên/music.jpg" alt="cover">
+  <h3>Phép Màu</h3>
+  <p>MAYDAYs ft. Minh Tốc</p>
+  <audio id="audio" src="Anh Kiên/y2mate.com - Phép Màu Đàn Cá Gỗ OST  Mounter x MAYDAYs Minh Tốc  Official MV.mp3"></audio>
+  <div class="controls">
+    <span id="current">0:00</span>
+    <button><i>⏮</i></button>
+    <button onclick="togglePlay()"><i id="play-icon">▶️</i></button>
+    <button><i>⏭</i></button>
+    <span id="duration">4:15</span>
+  </div>
+  <div class="container">
+    <a href="main.html" style="
+      display: inline-block;
+      margin-bottom: 10px;
+      background-color: #f2b5bd;
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+    ">← Về trang chủ</a>
+
+  </div>
+</div>
+
+<script>
+  const audio = document.getElementById("audio");
+  const playIcon = document.getElementById("play-icon");
+
+  function togglePlay() {
+    if (audio.paused) {
+      audio.play();
+      playIcon.textContent = "⏸️";
+    } else {
+      audio.pause();
+      playIcon.textContent = "▶️";
+    }
+  }
+</script>

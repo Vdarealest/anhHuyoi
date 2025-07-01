@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Album</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .slideshow {
+      text-align: center;
+    }
+
+    .slideshow img {
+      width: 250px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .slideshow-buttons {
+      margin-top: 10px;
+    }
+
+    .slideshow-buttons button {
+      background-color: #f2b5bd;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      border-radius: 8px;
+      margin: 0 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .slideshow-buttons button:hover {
+      background-color: #d14d72;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <h1>📸 Sự đáng iuuuuuuuuu</h1>
+    <div class="box slideshow">
+      <img id="albumImage" src="Anh Kiên/liec.JPG" alt="Album" />
+      <div class="slideshow-buttons">
+        <button onclick="prevImage()">←</button>
+        <button onclick="nextImage()">→</button>
+      </div>
+    </div>
+    <a href="main.html" style="
+      display: inline-block;
+      margin-bottom: 10px;
+      background-color: #f2b5bd;
+      color: white;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+    ">← Về trang chủ</a>
+
+  </div>
+
+  <script>
+    const images = ["Anh Kiên/angel.jpeg", "Anh Kiên/chuchu.PNG", "Anh Kiên/dinhcao.jpg", "Anh Kiên/huhu.JPG",
+                    "Anh Kiên/me.JPG", "Anh Kiên/saurieng1.PNG", "Anh Kiên/saurieng2.JPG", "Anh Kiên/xinhxiu.JPG", "Anh Kiên/anhKiennnn.JPG"
+    ];
+    let currentIndex = 0;
+
+    function showImage(index) {
+      const img = document.getElementById("albumImage");
+      img.src = images[index];
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+  </script>
+</body>
+</html>
